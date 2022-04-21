@@ -21,7 +21,7 @@ def get_imgs(urls):
             image = i.replace('https://www.cdc.gov//flu/weekly/weeklyarchives2021-2022/images/', '')
             with open(image, 'wb') as f:
                 for img in r.iter_content(chunk_size=1024): 
-                    f.write(./graphs/img)
+                    f.write(img)
 
 
 if __name__ == "__main__":
