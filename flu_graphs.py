@@ -39,13 +39,12 @@ def get_imgs(urls):
                     
 
     with open('README.md', 'w+') as f:
-        f.write(f'''
-            # cdc-influenza
-            CDC Weekly U.S. Influenza Surveillance Graphs
+        f.write(f'''# cdc-influenza
+CDC Weekly U.S. Influenza Surveillance Graphs
 
-            ![Clinical Laboratories](https://github.com/bbennett80/cdc-influenza/blob/main/{image_names[0]})
+![Clinical Laboratories](https://github.com/bbennett80/cdc-influenza/blob/main/{image_names[0]})
 
-            ![Public Health Laboratories](https://github.com/bbennett80/cdc-influenza/blob/main/{image_names[1]})
+![Public Health Laboratories](https://github.com/bbennett80/cdc-influenza/blob/main/{image_names[1]})
         ''')
 
     return        
