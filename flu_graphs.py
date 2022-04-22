@@ -1,7 +1,18 @@
 #!/usr/bin/env python3
 import requests
+import os
+from glob import glob
 from bs4 import BeautifulSoup
 
+def delete_old_gifs():
+    gifs = glob('*.gif', recursive=True)
+    if not gifs:
+        print('No gifs to delete')
+    else:
+        for gif in gifs:
+            os.remove(gif)
+    return
+        
 def get_img_urls():
     url = 'https://www.cdc.gov/flu/weekly/index.htm'
     base_img_url = 'https://www.cdc.gov/'
@@ -23,7 +34,7 @@ def get_imgs(urls):
                 for img in r.iter_content(chunk_size=1024): 
                     f.write(img)
 
-
 if __name__ == "__main__":
+    delete_old_gifs()
     urls = get_img_urls()
     get_imgs(urls)
