@@ -25,14 +25,30 @@ def get_img_urls():
 
 
 def get_imgs(urls):
+    
+    image_names = []
+    
     for i in urls:
-        print(i.replace('https://www.cdc.gov//flu/weekly/weeklyarchives2021-2022/images/', ''))
         r = requests.get(i)
         if r.status_code == 200:
             image = i.replace('https://www.cdc.gov//flu/weekly/weeklyarchives2021-2022/images/', '')
+            image_names.append(image)
             with open(image, 'wb') as f:
                 for img in r.iter_content(chunk_size=1024): 
                     f.write(img)
+                    
+
+    with open('README.md', 'w+') as f:
+        f.write(f'''
+            # cdc-influenza
+            CDC Weekly U.S. Influenza Surveillance Graphs
+
+            ![Clinical Laboratories](https://github.com/bbennett80/cdc-influenza/blob/main/{image_names[0]})
+
+            ![Public Health Laboratories](https://github.com/bbennett80/cdc-influenza/blob/main/{image_names[1]})
+        ''')
+
+    return        
 
 if __name__ == "__main__":
     delete_old_gifs()
