@@ -31,7 +31,7 @@ def get_imgs(urls):
     for i in urls:
         r = requests.get(i)
         if r.status_code == 200:
-            image = i.replace('https://www.cdc.gov//flu/weekly/weeklyarchives2021-2022/images/', '')
+            image = i.replace('https://www.cdc.gov/flu/weekly/weeklyarchives2021-2022/images/', '')
             image_names.append(image)
             with open(image, 'wb') as f:
                 for img in r.iter_content(chunk_size=1024): 
