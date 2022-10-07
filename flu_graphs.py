@@ -42,9 +42,9 @@ def get_imgs(urls):
         f.write(f'''# cdc-influenza
 CDC Weekly U.S. Influenza Surveillance Graphs
 
-![Clinical Laboratories](https://github.com/bbennett80/cdc-influenza/blob/main/{image_names[0]})
+![Clinical Laboratories](https://github.com/bbennett80/cdc-influenza/blob/main/{image_names[0]}?raw=true)
 
-![Public Health Laboratories](https://github.com/bbennett80/cdc-influenza/blob/main/{image_names[1]})
+![Public Health Laboratories](https://github.com/bbennett80/cdc-influenza/blob/main/{image_names[1]}?raw=true)
         ''')
 
     return        
