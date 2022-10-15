@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 import requests
-import os
-from glob import glob
 from bs4 import BeautifulSoup
 
 
